@@ -1,0 +1,23 @@
+version: "3"
+services:
+  # Angular container
+  # Built from the angular folder
+  # Host port = 5555, container port = 4200
+  angular:
+    build: angular
+    ports:
+      - "5555:4200"
+  # Express/Node container
+  # Built from the express folder
+  # Host & container ports = 3000
+  express:
+    build: express
+    ports:
+      - "3000:3000"
+  # Mongo container
+  # Built from the official image
+  # Host & container ports = 27017
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
